@@ -106,13 +106,111 @@
         android:text="In Zone" />
 
     <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Score:"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
         android:id="@+id/scoreTally"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="Score: 0"
+        android:text="0"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@id/scoreText"/>
+
+    <ToggleButton
+        android:id="@+id/toggle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/scoreText"
+        android:layout_toStartOf="@+id/scoreText"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors"
+        />
+
+    <ToggleButton
+        android:id="@+id/toggle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/toggle1"
+        android:layout_centerHorizontal="true"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors"/>
+
+    <ToggleButton
+        android:id="@+id/toggle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/toggle2"
+        android:layout_toEndOf="@+id/scoreText"
+        android:layout_toRightOf="@+id/scoreText"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors" />
+
+    <ToggleButton
+        android:id="@+id/toggle4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/toggle1"
+        android:layout_alignStart="@+id/toggle1"
+        android:layout_below="@+id/toggle1"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors" />
+
+    <ToggleButton
+        android:id="@+id/toggle5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/toggle2"
+        android:layout_alignStart="@+id/toggle2"
+        android:layout_below="@+id/toggle2"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors" />
+
+    <ToggleButton
+        android:id="@+id/toggle6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/toggle3"
+        android:layout_alignRight="@+id/toggle3"
+        android:layout_below="@+id/toggle3"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors" />
+
+    <ToggleButton
+        android:id="@+id/toggle7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/toggle4"
+        android:layout_alignStart="@+id/toggle4"
+        android:layout_below="@+id/toggle4"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors" />
+
+    <ToggleButton
+        android:id="@+id/toggle8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toggle7"
+        android:layout_alignLeft="@+id/toggle5"
+        android:layout_alignStart="@+id/toggle5"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors" />
+
+    <ToggleButton
+        android:id="@+id/toggle9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toggle8"
+        android:layout_alignEnd="@+id/toggle6"
+        android:layout_alignRight="@+id/toggle6"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors" />
 
 </RelativeLayout>
