@@ -1,9 +1,11 @@
 package com.example.jeremy.relicrecoveryscoringapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         autonomousGlyphColumnBonus = (CheckBox) findViewById(R.id.glyphColumnBonus);
         autonomousInZone = (CheckBox) findViewById(R.id.autonomousInZone);
         team = (ToggleButton) findViewById(R.id.team);
-
+        Log.d("Created", "");
     }
 
     @Override
@@ -45,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             if(autonomousInZone.isChecked()){
                 score = score + 10;
+            }
+            if(blueJewel.isChecked() && !redJewel.isChecked()){
+                score = score + 30;
             }
             for(int x=0; x<1; x++){
                 String newString = autonomousGlyphStacked.getText().toString();
@@ -60,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(autonomousInZone.isChecked()){
                 score = score + 10;
             }
-            if(redJewel.isChecked()){
+            if(redJewel.isChecked() && !blueJewel.isChecked()){
                 score = score + 30;
             }
             for(int x=0; x<1; x++){
@@ -69,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 score = score + result;
             }
         }
-        scoreTally.setText(String.format("Score: ", Integer.toString(score)));
+        scoreTally.setText(Integer.toString(score));
+        Log.d("score:",Integer.toString(score));
     }
 }
