@@ -213,4 +213,78 @@
         android:text="ToggleButton"
         android:background="@drawable/cryptobox_colors" />
 
+    <ToggleButton
+        android:id="@+id/toggle10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/toggle7"
+        android:layout_alignRight="@+id/toggle7"
+        android:layout_below="@+id/toggle7"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors" />
+
+    <ToggleButton
+        android:id="@+id/toggle11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/toggle8"
+        android:layout_alignRight="@+id/toggle8"
+        android:layout_below="@+id/toggle8"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors" />
+
+    <ToggleButton
+        android:id="@+id/toggle12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/toggle9"
+        android:layout_alignStart="@+id/toggle9"
+        android:layout_below="@+id/toggle9"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors" />
+
+    <CheckBox
+        android:id="@+id/z1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="In Zone 1"
+        android:layout_below="@+id/toggle10"
+        android:layout_alignLeft="@+id/toggle10"
+        android:layout_alignStart="@+id/toggle10" />
+
+    <CheckBox
+        android:id="@+id/z2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toggle11"
+        android:layout_centerHorizontal="true"
+        android:text="In Zone 2" />
+
+    <CheckBox
+        android:id="@+id/z3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/toggle12"
+        android:layout_alignRight="@+id/toggle12"
+        android:layout_below="@+id/toggle12"
+        android:text="In Zone 3" />
+
+    <CheckBox
+        android:id="@+id/standing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Standing"
+        android:layout_below="@+id/z1"
+        android:layout_alignLeft="@+id/z1"
+        android:layout_alignStart="@+id/z1" />
+
+    <CheckBox
+        android:id="@+id/balanced"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Balanced"
+        android:layout_below="@+id/z3"
+        android:layout_alignRight="@+id/z3"
+        android:layout_alignEnd="@+id/z3" />
+
 </RelativeLayout>
