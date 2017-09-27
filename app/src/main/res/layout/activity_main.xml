@@ -244,32 +244,6 @@
         android:background="@drawable/cryptobox_colors" />
 
     <CheckBox
-        android:id="@+id/z1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="In Zone 1"
-        android:layout_below="@+id/toggle10"
-        android:layout_alignLeft="@+id/toggle10"
-        android:layout_alignStart="@+id/toggle10" />
-
-    <CheckBox
-        android:id="@+id/z2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toggle11"
-        android:layout_centerHorizontal="true"
-        android:text="In Zone 2" />
-
-    <CheckBox
-        android:id="@+id/z3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/toggle12"
-        android:layout_alignRight="@+id/toggle12"
-        android:layout_below="@+id/toggle12"
-        android:text="In Zone 3" />
-
-    <CheckBox
         android:id="@+id/standing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
