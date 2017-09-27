@@ -1,11 +1,8 @@
 package com.example.jeremy.relicrecoveryscoringapp;
-
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     public CheckBox redJewel, blueJewel, autonomousGlyphColumnBonus, autonomousInZone, relic1, relic2, relic3, relicStanding, robotBalanced;
     public ToggleButton team;
     public ToggleButton toggle[] = new ToggleButton[12];
-    public Button programReset;
     public enum ButtonMode {
         NONE, GRAY, BROWN
     }
@@ -42,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         autonomousGlyphColumnBonus = (CheckBox) findViewById(R.id.glyphColumnBonus);
         autonomousInZone = (CheckBox) findViewById(R.id.autonomousInZone);
         team = (ToggleButton) findViewById(R.id.team);
-        programReset = (Button) findViewById(R.id.button2);
         toggle[0] = (ToggleButton) findViewById(R.id.toggle1);
         toggle[1] = (ToggleButton) findViewById(R.id.toggle2);
         toggle[2] = (ToggleButton) findViewById(R.id.toggle3);
@@ -60,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         relic3 = (CheckBox) findViewById(R.id.Relic3);
         relicStanding = (CheckBox) findViewById(R.id.UprightRelic);
         robotBalanced = (CheckBox) findViewById(R.id.BalancedRobot);
-        programReset.setOnClickListener(listener);
         team.setOnClickListener(listener);
         redJewel.setOnClickListener(listener);
         blueJewel.setOnClickListener(listener);
@@ -72,17 +66,16 @@ public class MainActivity extends AppCompatActivity {
         autonomousGlyphColumnBonus.setOnClickListener(listener);
         autonomousGlyphStacked.setOnClickListener(listener);
         autonomousInZone.setOnClickListener(listener);
-
-        for(int i=0; i<toggle.length; i++){
+        for(int i = 0; i < toggle.length; i++){
             toggle[i].setOnClickListener(listener);
         }
-        for(int x=0; x<mode.length; x++){
-            mode[x]=NONE;
-            toggle[x].setBackgroundColor(Color.WHITE);
-        }
+        Log.d("Created", "");
     }
-    private class Listener implements View.OnClickListener {
+
+    public class Listener implements View.OnClickListener {
+
         Listener(){}
+
         @Override
         public void onClick(View view){
             score = 0;
@@ -99,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     } catch (Exception e){
                         Log.e("Error", e.toString());
                     }
-                    for(int x = 0; x <mode.length; x++){
+                    for(int x = 0; x <=12; x++){
                         if(toggle[x].isPressed()) {
                             switch (mode[x]) {
                                 case NONE:
@@ -111,18 +104,6 @@ public class MainActivity extends AppCompatActivity {
                                 case BROWN:
                                     mode[x]=NONE;
                                     break;
-                            }
-                            if(mode[x]==NONE){
-                                toggle[x].setBackgroundColor(Color.WHITE);
-                            }
-                            if(mode[x]==GRAY){
-                                toggle[x].setBackgroundColor(Color.GRAY);
-                            }
-                            if(mode[x]==BROWN){
-                                toggle[x].setBackgroundColor(Color.parseColor("#664400"));
-                            }
-                            for(int i = 0; i < mode.length; i++){
-                                if(mode[i] != NONE) score += 2;
                             }
                         }
                     }
@@ -177,10 +158,10 @@ public class MainActivity extends AppCompatActivity {
                     if(mode[2] != NONE && mode[5] != NONE && mode[8] != NONE && mode[11] != NONE) {
                         score += 20;
                     }
-                    if(relic1.isChecked() && !relic2.isChecked() && !relic3.isChecked()){
+                    if(relic1.isChecked()){
                         score += 10;
                     }
-                    if(relic2.isChecked() && !relic3.isChecked()){
+                    if(relic2.isChecked()){
                         score += 20;
                     }
                     if(relic3.isChecked()){
@@ -192,25 +173,9 @@ public class MainActivity extends AppCompatActivity {
                     if(robotBalanced.isChecked()){
                         score += 20;
                     }
-                if(programReset.isPressed()){
-                    for(int x=0; x<mode.length; x++){
-                        mode[x]=NONE;
-                        toggle[x].setBackgroundColor(Color.WHITE);
-                    }
-                    relic1.setChecked(false);
-                    relic2.setChecked(false);
-                    relic3.setChecked(false);
-                    relicStanding.setChecked(false);
-                    robotBalanced.setChecked(false);
-                    redJewel.setChecked(true);
-                    blueJewel.setChecked(true);
-                    autonomousGlyphColumnBonus.setChecked(false);
-                    autonomousInZone.setChecked(false);
-                    autonomousGlyphStacked.setText("");
-                    score=0;
-                }
-                break;
+                    break;
             }
+            Log.d("update score", "");
             scoreTally.setText(Integer.toString(score));
         }
     }
