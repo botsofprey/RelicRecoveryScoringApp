@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:background="#bfbfbf"
-        android:state_checked="true" />
 
-    <item android:background="#8B4513"
-        android:state_checked="false" />
+    <!--<item android:state_focused="false"-->
+        <!--android:state_pressed="false"-->
+        <!--android:background="#ffffff" />-->
+
+    <!--<item android:state_focused="true"-->
+        <!--android:state_pressed="false"-->
+        <!--android:background="#ff0000" />-->
+
+    <!--<item android:state_focused="false"-->
+        <!--android:state_pressed="true"-->
+        <!--android:background="#99ff66" />-->
+
+    <!--<item android:state_focused="true"-->
+        <!--android:state_pressed="true"-->
+        <!--android:background="#666699" />-->
+    <item android:state_checked="false"
+        android:drawable="@drawable/off" />
+
+    <item android:state_checked="true"
+        android:drawable="@drawable/on" />
 </selector>
