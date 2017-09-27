@@ -1,18 +1,14 @@
 package com.example.jeremy.relicrecoveryscoringapp;
-
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.IntegerRes;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
+import static com.example.jeremy.relicrecoveryscoringapp.MainActivity.ButtonMode.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,8 +16,13 @@ public class MainActivity extends AppCompatActivity {
     Listener listener = new Listener();
 
     public EditText autonomousGlyphStacked;
-    public CheckBox redJewel, blueJewel, autonomousGlyphColumnBonus, autonomousInZone;
+    public CheckBox redJewel, blueJewel, autonomousGlyphColumnBonus, autonomousInZone, relic1, relic2, relic3, relicStanding, robotBalanced;
     public ToggleButton team;
+    public ToggleButton toggle[] = new ToggleButton[12];
+    public enum ButtonMode {
+        NONE, GRAY, BROWN
+    }
+    public ButtonMode mode[] = new ButtonMode[12];
     public TextView scoreTally;
 
     @Override
@@ -37,12 +38,37 @@ public class MainActivity extends AppCompatActivity {
         autonomousGlyphColumnBonus = (CheckBox) findViewById(R.id.glyphColumnBonus);
         autonomousInZone = (CheckBox) findViewById(R.id.autonomousInZone);
         team = (ToggleButton) findViewById(R.id.team);
+        toggle[0] = (ToggleButton) findViewById(R.id.toggle1);
+        toggle[1] = (ToggleButton) findViewById(R.id.toggle2);
+        toggle[2] = (ToggleButton) findViewById(R.id.toggle3);
+        toggle[3] = (ToggleButton) findViewById(R.id.toggle4);
+        toggle[4] = (ToggleButton) findViewById(R.id.toggle5);
+        toggle[5] = (ToggleButton) findViewById(R.id.toggle6);
+        toggle[6] = (ToggleButton) findViewById(R.id.toggle7);
+        toggle[7] = (ToggleButton) findViewById(R.id.toggle8);
+        toggle[8] = (ToggleButton) findViewById(R.id.toggle9);
+        toggle[9] = (ToggleButton) findViewById(R.id.toggle10);
+        toggle[10] = (ToggleButton) findViewById(R.id.toggle11);
+        toggle[11] = (ToggleButton) findViewById(R.id.toggle12);
+        relic1 = (CheckBox) findViewById(R.id.Relic1);
+        relic2 = (CheckBox) findViewById(R.id.Relic2);
+        relic3 = (CheckBox) findViewById(R.id.Relic3);
+        relicStanding = (CheckBox) findViewById(R.id.UprightRelic);
+        robotBalanced = (CheckBox) findViewById(R.id.BalancedRobot);
         team.setOnClickListener(listener);
         redJewel.setOnClickListener(listener);
         blueJewel.setOnClickListener(listener);
+        relic1.setOnClickListener(listener);
+        relic2.setOnClickListener(listener);
+        relic3.setOnClickListener(listener);
+        relicStanding.setOnClickListener(listener);
+        robotBalanced.setOnClickListener(listener);
         autonomousGlyphColumnBonus.setOnClickListener(listener);
         autonomousGlyphStacked.setOnClickListener(listener);
         autonomousInZone.setOnClickListener(listener);
+        for(int i = 0; i < toggle.length; i++){
+            toggle[i].setOnClickListener(listener);
+        }
         Log.d("Created", "");
     }
 
@@ -65,6 +91,87 @@ public class MainActivity extends AppCompatActivity {
                         }
                     } catch (Exception e){
                         Log.e("Error", e.toString());
+                    }
+                    for(int x = 0; x <=12; x++){
+                        if(toggle[x].isPressed()) {
+                            switch (mode[x]) {
+                                case NONE:
+                                    mode[x]=GRAY;
+                                    break;
+                                case GRAY:
+                                    mode[x]=BROWN;
+                                    break;
+                                case BROWN:
+                                    mode[x]=NONE;
+                                    break;
+                            }
+                        }
+                    }
+                    if(mode[0]==GRAY && mode[1]==BROWN && mode[2]==GRAY && mode[3]==BROWN && mode[4]
+                            ==GRAY && mode[5]==BROWN && mode[6]==GRAY && mode[7]==BROWN && mode[8]==
+                            GRAY && mode[9]==BROWN && mode[10]==GRAY && mode[11]==BROWN){
+                        score += 30;
+                    }
+                    if(mode[0]==BROWN && mode[1]==GRAY && mode[2]==BROWN && mode[3]==GRAY && mode[4]
+                            ==BROWN && mode[5]==GRAY && mode[6]==BROWN && mode[7]==GRAY && mode[8]==
+                            BROWN && mode[9]==GRAY && mode[10]==BROWN && mode[11]==GRAY){
+                        score += 30;
+                    }
+                    if(mode[0]==GRAY && mode[1]==BROWN && mode[2]==GRAY && mode[3]==BROWN && mode[4]
+                            ==GRAY && mode[5]==BROWN && mode[6]==BROWN && mode[7]==GRAY && mode[8]==
+                            BROWN && mode[9]==GRAY && mode[10]==BROWN && mode[11]==GRAY){
+                        score += 30;
+                    }
+                    if(mode[0]==BROWN && mode[1]==GRAY && mode[2]==BROWN && mode[3]==GRAY && mode[4]
+                            ==BROWN && mode[5]==GRAY && mode[6]==GRAY && mode[7]==BROWN && mode[8]==
+                            GRAY && mode[9]==BROWN && mode[10]==GRAY && mode[11]==BROWN){
+                        score += 30;
+                    }
+                    if(mode[0]==BROWN && mode[1]==GRAY && mode[2]==GRAY && mode[3]==BROWN && mode[4]
+                            ==BROWN && mode[5]==GRAY && mode[6]==GRAY && mode[7]==BROWN && mode[8]==
+                            BROWN && mode[9]==GRAY && mode[10]==GRAY && mode[11]==BROWN){
+                        score += 30;
+                    }
+                    if(mode[0]==GRAY && mode[1]==BROWN && mode[2]==BROWN && mode[3]==GRAY && mode[4]
+                            ==GRAY && mode[5]==BROWN && mode[6]==BROWN && mode[7]==GRAY && mode[8]==
+                            GRAY && mode[9]==BROWN && mode[10]==BROWN && mode[11]==GRAY){
+                        score += 30;
+                    }
+                    if(mode[0] != NONE && mode[1] != NONE && mode[2] != NONE){
+                        score += 10;
+                    }
+                    if(mode[3] != NONE && mode[4] != NONE && mode[5] != NONE){
+                        score += 10;
+                    }
+                    if(mode[6] != NONE && mode[7] != NONE && mode[8] != NONE){
+                        score += 10;
+                    }
+                    if(mode[9] != NONE && mode[10] != NONE && mode[11] != NONE){
+                        score += 10;
+                    }
+                    if(mode[0] != NONE && mode[3] != NONE && mode[6] != NONE && mode[9] != NONE) {
+                        score += 20;
+                    }
+                    if(mode[1] != NONE && mode[4] != NONE && mode[7] != NONE && mode[10] != NONE) {
+                        score += 20;
+                    }
+                    if(mode[2] != NONE && mode[5] != NONE && mode[8] != NONE && mode[11] != NONE) {
+                        score += 20;
+                    }
+                    if(relic1.isChecked()){
+                        score += 10;
+                    }
+                    if(relic2.isChecked()){
+                        score += 20;
+                    }
+                    if(relic3.isChecked()){
+                        score += 40;
+                    }
+                    if(relicStanding.isChecked()){
+                        score += 15;
+                    }
+                    if(robotBalanced.isChecked()){
+                        score += 20;
                     }
                     break;
             }
