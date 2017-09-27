@@ -21,12 +21,12 @@
         android:id="@+id/message"
         android:layout_width="match_parent"
         android:layout_height="33dp"
-        android:layout_alignLeft="@+id/redJewel"
-        android:layout_alignStart="@+id/redJewel"
-        android:layout_below="@+id/team"
         android:text="Autonomous:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:layout_below="@+id/team"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ToggleButton
         android:id="@+id/team"
@@ -127,91 +127,173 @@
         android:id="@+id/toggle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/scoreText"
-        android:layout_toStartOf="@+id/scoreText"
         android:text="ToggleButton"
         android:background="@drawable/cryptobox_colors"
-        />
+        android:layout_above="@+id/toggle4"
+        android:layout_alignLeft="@+id/toggle4"
+        android:layout_alignStart="@+id/toggle4" />
 
     <ToggleButton
         android:id="@+id/toggle2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/toggle1"
-        android:layout_centerHorizontal="true"
         android:text="ToggleButton"
-        android:background="@drawable/cryptobox_colors"/>
+        android:background="@drawable/cryptobox_colors"
+        android:layout_above="@+id/toggle5"
+        android:layout_alignLeft="@+id/toggle5"
+        android:layout_alignStart="@+id/toggle5" />
 
     <ToggleButton
         android:id="@+id/toggle3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/toggle2"
-        android:layout_toEndOf="@+id/scoreText"
-        android:layout_toRightOf="@+id/scoreText"
         android:text="ToggleButton"
-        android:background="@drawable/cryptobox_colors" />
+        android:background="@drawable/cryptobox_colors"
+        android:layout_above="@+id/toggle6"
+        android:layout_alignLeft="@+id/toggle6"
+        android:layout_alignStart="@+id/toggle6" />
 
     <ToggleButton
         android:id="@+id/toggle4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/toggle1"
-        android:layout_alignStart="@+id/toggle1"
-        android:layout_below="@+id/toggle1"
         android:text="ToggleButton"
-        android:background="@drawable/cryptobox_colors" />
+        android:background="@drawable/cryptobox_colors"
+        android:layout_above="@+id/toggle7"
+        android:layout_alignLeft="@+id/toggle7"
+        android:layout_alignStart="@+id/toggle7" />
 
     <ToggleButton
         android:id="@+id/toggle5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/toggle2"
-        android:layout_alignStart="@+id/toggle2"
-        android:layout_below="@+id/toggle2"
         android:text="ToggleButton"
-        android:background="@drawable/cryptobox_colors" />
+        android:background="@drawable/cryptobox_colors"
+        android:layout_above="@+id/toggle8"
+        android:layout_alignLeft="@+id/toggle8"
+        android:layout_alignStart="@+id/toggle8" />
 
     <ToggleButton
         android:id="@+id/toggle6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/toggle3"
-        android:layout_alignRight="@+id/toggle3"
-        android:layout_below="@+id/toggle3"
         android:text="ToggleButton"
-        android:background="@drawable/cryptobox_colors" />
+        android:background="@drawable/cryptobox_colors"
+        android:layout_above="@+id/toggle9"
+        android:layout_alignLeft="@+id/toggle9"
+        android:layout_alignStart="@+id/toggle9" />
 
     <ToggleButton
         android:id="@+id/toggle7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/toggle4"
-        android:layout_alignStart="@+id/toggle4"
-        android:layout_below="@+id/toggle4"
         android:text="ToggleButton"
-        android:background="@drawable/cryptobox_colors" />
+        android:background="@drawable/cryptobox_colors"
+        android:layout_above="@+id/toggle10"
+        android:layout_alignLeft="@+id/toggle10"
+        android:layout_alignStart="@+id/toggle10" />
 
     <ToggleButton
         android:id="@+id/toggle8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/toggle7"
-        android:layout_alignLeft="@+id/toggle5"
-        android:layout_alignStart="@+id/toggle5"
         android:text="ToggleButton"
-        android:background="@drawable/cryptobox_colors" />
+        android:background="@drawable/cryptobox_colors"
+        android:layout_above="@+id/toggle11"
+        android:layout_alignLeft="@+id/toggle11"
+        android:layout_alignStart="@+id/toggle11" />
 
     <ToggleButton
         android:id="@+id/toggle9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/toggle8"
-        android:layout_alignEnd="@+id/toggle6"
-        android:layout_alignRight="@+id/toggle6"
         android:text="ToggleButton"
-        android:background="@drawable/cryptobox_colors" />
+        android:background="@drawable/cryptobox_colors"
+        android:layout_above="@+id/toggle11"
+        android:layout_alignLeft="@+id/toggle12"
+        android:layout_alignStart="@+id/toggle12" />
+
+    <ToggleButton
+        android:id="@+id/toggle10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors"
+        android:layout_alignBaseline="@+id/toggle11"
+        android:layout_alignBottom="@+id/toggle11"
+        android:layout_toLeftOf="@+id/scoreText"
+        android:layout_toStartOf="@+id/scoreText" />
+
+    <ToggleButton
+        android:id="@+id/toggle11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors"
+        android:layout_alignBaseline="@+id/toggle12"
+        android:layout_alignBottom="@+id/toggle12"
+        android:layout_centerHorizontal="true" />
+
+    <ToggleButton
+        android:id="@+id/toggle12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:background="@drawable/cryptobox_colors"
+        android:layout_marginBottom="89dp"
+        android:layout_above="@+id/scoreText"
+        android:layout_toRightOf="@+id/scoreText"
+        android:layout_toEndOf="@+id/scoreText" />
+
+    <CheckBox
+        android:id="@+id/UprightRelic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scoreText"
+        android:layout_alignEnd="@+id/editText4"
+        android:layout_alignRight="@+id/editText4"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:text="Upright Relic" />
+
+    <CheckBox
+        android:id="@+id/BalancedRobot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scoreText"
+        android:layout_toEndOf="@+id/blueJewel"
+        android:layout_toRightOf="@+id/blueJewel"
+        android:text="Balanced Robot" />
+
+    <CheckBox
+        android:id="@+id/Relic3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Relic2"
+        android:layout_alignBottom="@+id/Relic2"
+        android:layout_alignEnd="@+id/toggle12"
+        android:layout_alignRight="@+id/toggle12"
+        android:text="Relic(3rd)" />
+
+    <CheckBox
+        android:id="@+id/Relic2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Relic1"
+        android:layout_alignEnd="@+id/toggle11"
+        android:layout_alignRight="@+id/toggle11"
+        android:layout_alignTop="@+id/Relic1"
+        android:text="Relic(2nd)" />
+
+    <CheckBox
+        android:id="@+id/Relic1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toggle10"
+        android:layout_marginTop="21dp"
+        android:text="Relic(1st)" />
 
     <ToggleButton
         android:id="@+id/toggle10"
