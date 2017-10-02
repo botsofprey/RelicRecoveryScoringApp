@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public ButtonMode mode[] = new ButtonMode[12];
     public TextView scoreTally;
+    public int boxCounter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
         autonomousGlyphColumnBonus.setOnClickListener(listener);
         autonomousGlyphStacked.setOnClickListener(listener);
         autonomousInZone.setOnClickListener(listener);
-
+        autonomousGlyphColumnBonus.setClickable(false);
+        autonomousGlyphStacked.setText("0");
         for(int i=0; i<toggle.length; i++){
             toggle[i].setOnClickListener(listener);
         }
@@ -90,6 +92,16 @@ public class MainActivity extends AppCompatActivity {
                 default:
                     if(team.getText().toString().equals("Team Red") && redJewel.isChecked() && !blueJewel.isChecked()) score += 30;
                     else if(team.getText().toString().equals("Team Blue") && blueJewel.isChecked() && !redJewel.isChecked()) score += 30;
+                    try {
+                        if (!autonomousGlyphStacked.getText().toString().equals("")) {
+                            autonomousGlyphColumnBonus.setClickable(true);
+                            if(Integer.parseInt(autonomousGlyphStacked.getText().toString())<=0) {
+                                autonomousGlyphColumnBonus.setClickable(false);
+                            }
+                        } else { autonomousGlyphColumnBonus.setClickable(false); }
+                    } catch (Exception e){
+                        Log.e("Error", e.toString());
+                    }
                     if(autonomousGlyphColumnBonus.isChecked()) score += 30;
                     if(autonomousInZone.isChecked()) score += 10;
                     try {
@@ -118,11 +130,24 @@ public class MainActivity extends AppCompatActivity {
                             if(mode[x]==GRAY){
                                 toggle[x].setBackgroundColor(Color.GRAY);
                             }
-                            if(mode[x]==BROWN){
+                            if(mode[x]==BROWN) {
                                 toggle[x].setBackgroundColor(Color.parseColor("#664400"));
                             }
+                            boxCounter = 1;
                             for(int i = 0; i < mode.length; i++){
-                                if(mode[i] != NONE) score += 2;
+                                if(mode[i] != NONE) {
+                                    score += 2;
+                                    boxCounter++;
+                                }
+                            }
+                            try {
+                                for (int i = 1; i < boxCounter; i++) {
+                                    if (i <= Integer.parseInt(autonomousGlyphStacked.getText().toString())) {
+                                        score -= 2;
+                                    }
+                                }
+                            }catch (Exception e){
+                                Log.e("Error", e.toString());
                             }
                         }
                     }
@@ -206,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
                     blueJewel.setChecked(true);
                     autonomousGlyphColumnBonus.setChecked(false);
                     autonomousInZone.setChecked(false);
-                    autonomousGlyphStacked.setText("");
+                    autonomousGlyphStacked.setText("0");
                     score=0;
                 }
                 break;

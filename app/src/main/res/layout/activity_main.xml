@@ -54,23 +54,23 @@
         android:layout_width="wrap_content"
         android:checked="true"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/message"
-        android:layout_toEndOf="@+id/redJewel"
+        android:text="Blue Jewel"
+        android:layout_above="@+id/autonomousGlyphsStacked"
         android:layout_toRightOf="@+id/redJewel"
-        android:text="Blue Jewel" />
+        android:layout_toEndOf="@+id/redJewel"
+        android:layout_marginBottom="14dp" />
 
     <EditText
         android:id="@+id/autonomousGlyphsStacked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/redJewel"
-        android:layout_alignStart="@+id/redJewel"
-        android:layout_below="@+id/redJewel"
         android:ems="10"
-        android:hint="Glyphs Stacked:"
+        android:hint="0"
         android:inputType="number"
 
-        />
+        android:layout_above="@+id/autonomousInZone"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <CheckBox
         android:id="@+id/glyphColumnBonus"
@@ -92,18 +92,19 @@
         android:inputType="textPersonName"
         android:text="User Controlled:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:layout_below="@+id/autonomousInZone"
+        android:layout_above="@+id/toggle1"
         android:layout_alignLeft="@+id/autonomousGlyphsStacked"
-        android:layout_alignStart="@+id/autonomousGlyphsStacked" />
+        android:layout_alignStart="@+id/autonomousGlyphsStacked"
+        android:layout_marginBottom="11dp" />
 
     <CheckBox
         android:id="@+id/autonomousInZone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="In Zone"
+        android:layout_above="@+id/editText4"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/autonomousGlyphsStacked"
-        android:text="In Zone" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/scoreText"
@@ -331,4 +332,27 @@
         android:layout_below="@+id/content"
         android:layout_alignRight="@+id/toggle3"
         android:layout_alignEnd="@+id/toggle3" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="486dp"
+        android:layout_marginRight="486dp"
+        android:layout_marginTop="225dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Glyphs Stacked:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:visibility="visible"
+        android:layout_below="@+id/redJewel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
